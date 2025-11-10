@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La amo Ashey ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #ffb6c1, #ff69b4, #ff1493);
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+      position: relative;
+      font-size: 70px;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px #ff69b4;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff2e63;
+      font-size: 25px;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    .glow {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 40px #ff1493, 0 0 80px #ff1493;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glow">💖 LA AMO ASHEY 💖</h1>
+
+  <script>
+    const body = document.body;
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+      heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+      body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
